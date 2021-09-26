@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    <title>Getting Started</title>
+    <style>
+        body, .jumbotron
+        {
+            padding: 30px;
+            width: auto;
+        }
+        .text-giant
+        {
+            font-size: 40px;;
+        }
+        .quantityNos
+        {
+            font-size: 15px;
+
+        }
+        .totalText
+        {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <h2 class="text-center">How much do that cost?</h2>
+        <form>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" name="price" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">
+                    Quantity:   </label>
+                    <span class=" text-right label label-primary quantityNos">1</span>
+
+                
+                <input type="range" class="form-control" name="quantity" value="1" min="1" max="20" step="1">
+            </div>
+        </form>
+
+        <div class="text-right totalText">Total</div>
+        <div class="text-right text-giant total"></div>
+    </div>
+    <div class="text-center">Made by
+    <a href="http://midhunnair.ml">Midhun Nair</a>
+    </div>
+
+<!----------------Javascript---------------------->
+    <script>
+        //first we will grab every thing we need ("while doing" 1st this)
+        const priceInput = document.querySelector('[name=price]');
+        const quantityInput = document.querySelector('[name=quantity]');
+        const totalInput = document.querySelector('.total');
+        const totalQuantity = document.querySelector('.quantityNos');
+
+        //then we will create the functions that we'll need ("while doing" at last this)
+        function calculateCost()
+        {
+            const price = priceInput.value;
+            const quantity = quantityInput.value;
+            const cost = price * quantity;
+            
+            console.log(cost);
+            
+            totalInput.innerText =`₹`+ cost.toFixed(2);
+        };
+
+        function quantityMain()
+        {
+            const quantityMain1 = quantityInput.value;
+            console.log(quantityMain1);
+            totalQuantity.innerText = quantityMain1;
+
+
+        }
+
+        //when the application runs for the first time
+        calculateCost();
+        quantityMain();
+
+        //then we'll add our event listeners ("while doing" 2nd this)
+        priceInput.addEventListener('input', calculateCost); //to update cost
+        quantityInput.addEventListener('input', quantityMain);//to update quantity
+        quantityInput.addEventListener('input', calculateCost);//to update cost
+
+    </script>
+</body>
+</html>
