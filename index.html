@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
     <title>Crazy Buttons</title>
     <style>
-        body, .jumbotron
+        body,
         {
             padding: 30px;
             width: auto;
+        }
+
+        footer
+        {
+            left: 42%;
+            position: fixed;
+            bottom: 10px;
         }
 
         .btn-crazy
@@ -23,7 +30,7 @@
         }
 
         .won
-        {
+        {   
             top: 50%;
             left: 50%;
             font-size: 60px;
@@ -192,6 +199,12 @@
             Click Me!
         </button>
     </div>
+    <footer><span style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
+        unselectable="on"
+        onselectstart="return false;" 
+        onmousedown="return false;">  
+        Made with &hearts; by</span> <a href="http://midhunnair.ml">Midhun Nair</a>
+    </footer>
 
 <!----------------Javascript---------------------->
     <script>
@@ -208,7 +221,7 @@
             const offsetLeft = Math.random() * (window.innerWidth - button.clientWidth);
             
             //and a random number for top offset
-            const offsetTop = Math.random() * (window.innerHeight - button.clientHeight);
+            const offsetTop = Math.random() * (window.innerHeight - button.clientHeight - 40);
 
             console.log(offsetLeft,offsetTop);
 
