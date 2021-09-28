@@ -209,10 +209,14 @@
 <!----------------Javascript---------------------->
     <script>
 
+        const heading = document.querySelector('.h1');
+
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 		var element = document.getElementById('text');
 		if (isMobile) {
-  			element.innerHTML = "You are using Mobile";
+  			heading.innerText = 'This game only works on desktop so please Open this link in DESKTOP and ENJOY!!!'
+                        
+
 		} else {
 		
 
