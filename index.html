@@ -208,6 +208,14 @@
 
 <!----------------Javascript---------------------->
     <script>
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		var element = document.getElementById('text');
+		if (isMobile) {
+  			element.innerHTML = "You are using Mobile";
+		} else {
+		
+
         //first we'll grab everything we want
         const crazyButton = document.querySelectorAll('.btn-crazy');
         const celebrations = document.querySelectorAll('.confetti-piece');
@@ -269,7 +277,7 @@
             crazyButton.forEach(button => {
                 button.addEventListener('mouseenter',moveBtn);
             });
-
+        }
     </script>
 </body>
 </html>
